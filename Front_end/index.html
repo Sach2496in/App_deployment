@@ -16,6 +16,22 @@
                     document.getElementById("response").innerText = data.message;
                 });
         }
+    
     </script>
+
+    <button onclick="getTime()">Get Server Time</button>
+    <p id="time"></p>
+
+    <script>
+        function getTime() {
+            fetch("/api/time")
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("time").innerText =
+                        "Server Time: " + data.server_time;
+                });
+        }
+    </script>
+
 </body>
 </html>
