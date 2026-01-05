@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample FastAPI App</title>
+</head>
+<body>
+    <h1>Frontend + Backend Demo</h1>
+    <button onclick="callBackend()">Call Backend</button>
+    <p id="response"></p>
+
+    <script>
+        function callBackend() {
+            fetch("/api/hello")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("response").innerText = data.message;
+                });
+        }
+    </script>
+</body>
+</html>
