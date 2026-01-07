@@ -21,3 +21,7 @@ def serve_home():
 @app.get("/api/time")
 def get_time():
     return{"server_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+
+@app.get("/api/version")
+def app_version():
+    return {"version": "v2 - practice branch"}
